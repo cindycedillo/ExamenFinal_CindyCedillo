@@ -43,12 +43,12 @@ public class ProductoController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<Producto> crearCliente(@RequestBody Producto persona) {
+    public ResponseEntity<Producto> crearProducto(@RequestBody Producto persona) {
         return new ResponseEntity<>(productoService.save(persona), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Producto> eliminarCliente(@PathVariable Long id) {
+    public ResponseEntity<Producto> eliminarProducto(@PathVariable Long id) {
         productoService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
 

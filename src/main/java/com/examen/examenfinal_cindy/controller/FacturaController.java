@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/factura")
 public class FacturaController {
-      @Autowired
+    @Autowired
     FacturaService productoService;
 
     @GetMapping("/listar")
@@ -43,12 +43,12 @@ public class FacturaController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<Factura> crearCliente(@RequestBody Factura factura) {
+    public ResponseEntity<Factura> crearFactura(@RequestBody Factura factura) {
         return new ResponseEntity<>(productoService.save(factura), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Factura> eliminarCliente(@PathVariable Long id) {
+    public ResponseEntity<Factura> eliminarFactura(@PathVariable Long id) {
         productoService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
 
